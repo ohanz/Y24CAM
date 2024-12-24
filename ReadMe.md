@@ -1,8 +1,8 @@
 <h1>Y24, A Browser Camera App</h1>
 
-<p>Simple Camera App written in HTML, CSS, and Pure JavaScript which can be used to record and capture images.</p>
+<p>A Simple Hyper-Camera App written in HTML, CSS, and Pure JavaScript which can be used to record and capture images. Watch Out For more Updates From Ohanz@Ihype.</p>
 
-<h3>The Tech Stack</h3>
+<h3>The Super Tech Stack Used</h3>
 <ul>
   <li>HTML5</li>
   <li>CSS3</li>
@@ -21,4 +21,4 @@ git clone https://github.com/ohanz/Y24CAM.git
 
 - Go to the 'Browser Camera' directory
 - Run the index.htm file
-- Start using the Y24camera!!
+- Start using the Super-hyper Y24camera!!
