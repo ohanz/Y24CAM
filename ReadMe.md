@@ -1,5 +1,5 @@
-<h1>Y24, A Browser Camera App</h1>
-<h3>Y24: Year 2024's last project</h3>
+<h1>Y24, Your Very Own Browser Camera App</h1>
+<h3>Y24: Year 2024's last project. </h3>
 
 <p>A Simple Hyper-Camera App written in HTML, CSS, and Pure JavaScript which can be used to record and capture images. Watch Out For more Updates From Ohanz@Ihype.</p>
 
