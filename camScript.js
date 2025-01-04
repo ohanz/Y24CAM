@@ -13,6 +13,7 @@ let buffer = [];
 let recordState = false;
 
 let videoRecorder = document.querySelector("#record-video");
+let stopRecorder = document.querySelector(".stop-record"); // ALT
 let captureButton = document.querySelector("#click-image");
 
 let timingELem = document.querySelector(".timing");
@@ -61,14 +62,31 @@ videoRecorder.addEventListener('click', function () {
         mediaRecorder.start();
         videoRecorder.style.animation = "buttonAnimation 0.75s infinite";
         recordState = true;
-        startClock();
+        startClock(); stopRecorder.style.display ="block";
     } else {
         mediaRecorder.stop();
         videoRecorder.style.animation = "none";
         recordState = false;
-        stopClock();
+        stopClock(); stopRecorder.style.display ="none";
     }
 });
+// Stop Recording Video
+stopRecorder.addEventListener('click', function () {
+    // confirm("Are You Sure To Cancel Video Recording?");
+    if (confirm("Are You Sure To Cancel Video Recording?\n Tap 'Okay' To Proceed!")) {
+        // txt = "You pressed OK!";
+        // alert("Canceled Record!");
+        if (recordState) {
+            mediaRecorder.stop();
+            videoRecorder.style.animation = "none";
+            recordState = false;
+            stopClock();stopRecorder.style.display ="none";
+        }
+      } else {
+        // txt = "You pressed Cancel!";
+        alert("Action Dismised! \n Now Continue Session, Hyper.");
+      }
+})
 
 // Capturing Image
 captureButton.addEventListener("click", function () {
