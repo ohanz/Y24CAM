@@ -12,6 +12,7 @@ let buffer = [];
 
 let recordState = false;
 
+let header = document.querySelector(".header");
 let videoRecorder = document.querySelector("#record-video");
 let stopRecorder = document.querySelector(".stop-record"); // ALT
 let captureButton = document.querySelector("#click-image");
@@ -52,6 +53,18 @@ navigator.mediaDevices
         console.log(err);
     });
 
+
+    function dynamicHead(){
+        if(!recordState){
+            // header.style.display="block";
+          header.style.width="auto";  
+        }
+        else {
+            header.style.width="200px";
+            // header.style.display="none"; 
+        }
+    }
+
 // Recording Video
 videoRecorder.addEventListener('click', function () {
     if (!mediaRecorder) {
@@ -62,12 +75,12 @@ videoRecorder.addEventListener('click', function () {
         mediaRecorder.start();
         videoRecorder.style.animation = "buttonAnimation 0.75s infinite";
         recordState = true;
-        startClock(); stopRecorder.style.display ="block";
+        startClock(); stopRecorder.style.display ="block"; dynamicHead();
     } else {
         mediaRecorder.stop();
         videoRecorder.style.animation = "none";
         recordState = false;
-        stopClock(); stopRecorder.style.display ="none";
+        stopClock(); stopRecorder.style.display ="none";dynamicHead();
     }
 });
 // Stop Recording Video
@@ -81,6 +94,7 @@ stopRecorder.addEventListener('click', function () {
             videoRecorder.style.animation = "none";
             recordState = false;
             stopClock();stopRecorder.style.display ="none";
+            dynamicHead();
         }
       } else {
         // txt = "You pressed Cancel!";
